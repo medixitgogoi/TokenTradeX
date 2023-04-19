@@ -27,7 +27,7 @@ const Coins = () => {
     const fetchCoins = async () => {
       try {
         const { data } = await axios.get(
-          `${server}/coins/markets?per_page=98&vs_currency=${currency}&page=${page}`
+          `${server}/coins/markets?per_page=96&vs_currency=${currency}&page=${page}`
         );
         setCoins(data);
         // console.log(data);
@@ -45,21 +45,22 @@ const Coins = () => {
   if (error) return <ErrorComponent message={'Error While Fetching Coins'} />; //to be reviewed
 
   return (
-    <Container maxW={'container.xxl'} bgGradient='linear(to-l, #25274D, #5AB9EA)'>
+    <Container maxW={'container.xxl'} bgColor={"#e5e7eb"}>
       {loading ? (
         <Loader />
       ) : (
         <>
-          {/* To be reviewed */}
-          <RadioGroup value={currency} onChange={setCurrency} p={'8'}>
-            <HStack spacing={'4'} justifyContent={{base: "center", lg: "flex-start"}}>
-              <Radio value={'inr'} ><Text color={{base: '#5AB9EA', lg: "#25274D"}}>INR</Text></Radio>
-              <Radio value={'usd'}><Text color={{base: '#5AB9EA', lg: "#25274D"}}>USD</Text></Radio>
-              <Radio value={'eur'}><Text color={{base: '#5AB9EA', lg: "#25274D"}}>EUR</Text></Radio>
+          {/* To be reviewed once again*/}
+
+          <RadioGroup value={currency} onChange={setCurrency} pt={7} pl={'10'}>
+            <HStack spacing={'4'} justifyContent={{ base: "center", lg: "flex-start" }}>
+              <Radio size='sm' value={'inr'} borderColor={"#130130"}><Text fontSize={"sm"} color={'#130130'}>INR</Text></Radio>
+              <Radio size='sm' value={'usd'} borderColor={"#130130"}><Text fontSize={"sm"} color={'#130130'}>USD</Text></Radio>
+              <Radio size='sm' value={'eur'} borderColor={"#130130"}><Text fontSize={"sm"} color={'#130130'}>EUR</Text></Radio>
             </HStack>
           </RadioGroup>
 
-          <HStack wrap={'wrap'} justifyContent={'space-evenly'}>
+          <HStack spacing='0.1rem' wrap={'wrap'} justifyContent={'space-evenly'} py={5} px={10}>
             {coins.map((i) => (
               <CoinCard
                 id={i.id}
@@ -78,9 +79,16 @@ const Coins = () => {
             {btns.map((item, index) => (
               <Button
                 key={index}
-                color={'#5AB9EA'}
-                bgColor={'#25274D'}
+                size={"xs"}
+                color={'#130130'}
+                bgColor={"#fff"}
                 onClick={() => changePage(index + 1)}
+                css={{
+                  "&:hover": {
+                    cursor: "pointer",
+                    border: "2px solid #fff"
+                  },
+                }}
               >
                 {index + 1}
               </Button>

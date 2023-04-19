@@ -103,8 +103,8 @@ const CoinDetails = () => {
   if (error) return <ErrorComponent message={"Error While Fetching Coin"} />;
 
   return (
-    <Box bgColor={"#5AB9EA"}>
-      <Container maxW={"container.xl"}  pt={6} bgColor={"#5AB9EA"}>
+    <Box bgColor={"#e5e7eb"}>
+      <Container maxW={"container.xl"} pt={6} bgColor={"#e5e7eb"}>
         {loading ? (
           <Loader />
         ) : (
@@ -118,10 +118,11 @@ const CoinDetails = () => {
               {btns.map((i) => (
                 <Button
                   disabled={days === i}
-                  color={'#5AB9EA'}
-                  bgColor={'#25274D'}
-                  key={i}
-                  onClick={() => switchChartStats(i)}
+                  size={"xs"}
+                  padding={2}
+                  color={'#130130'}
+                  bgColor={"#fff"}
+                  cursor= {"pointer"}
                 >
                   {i}
                 </Button>
@@ -131,47 +132,47 @@ const CoinDetails = () => {
 
             <RadioGroup value={currency} onChange={setCurrency} p={"8"}>
               <HStack spacing={"4"} flex justifyContent={"center"}>
-                <Radio value={'inr'} ><Text color={'#25274D'}>INR</Text></Radio>
-                <Radio value={'usd'}><Text color={'#25274D'}>USD</Text></Radio>
-                <Radio value={'eur'}><Text color={'#25274D'}>EUR</Text></Radio>
+                <Radio size={"sm"} value={'inr'} borderColor={"#130130"}><Text color={'#25274D'}>INR</Text></Radio>
+                <Radio size={"sm"} value={'usd'} borderColor={"#130130"}><Text color={'#25274D'}>USD</Text></Radio>
+                <Radio size={"sm"} value={'eur'} borderColor={"#130130"}><Text color={'#25274D'}>EUR</Text></Radio>
               </HStack>
             </RadioGroup>
 
             <VStack spacing={"4"} p="16" alignItems={"flex-start"} flex justifyContent={"center"}>
-              <Text fontSize={"small"} color={"#25274D"} alignSelf="center" opacity={0.7}>
+              <Text fontSize={"xs"} color={"#25274D"} alignSelf="center" opacity={0.7}>
                 Last Updated On{" "}
                 {Date(coin.market_data.last_updated).split("G")[0]}
               </Text>
 
-                  <Image
-                    src={coin.image.large}
-                    w={"16"}
-                    h={"16"}
-                    objectFit={"contain"}
-                  />
+              <Image
+                src={coin.image.large}
+                w={"10"}
+                h={"10"}
+                objectFit={"contain"}
+              />
 
-                  <Stat>
-                    <StatLabel>{coin.name}</StatLabel>
-                    <StatNumber>
-                      {currencySymbol}
-                      {coin.market_data.current_price[currency]}
-                    </StatNumber>
-                    <StatHelpText>
-                      <StatArrow
-                        type={
-                          coin.market_data.price_change_percentage_24h > 0
-                            ? "increase"
-                            : "decrease"
-                        }
-                      />
-                      {coin.market_data.price_change_percentage_24h}%
-                    </StatHelpText>
-                  </Stat>
+              <Stat>
+                <StatLabel>{coin.name}</StatLabel>
+                <StatNumber size={'md'}>
+                  {currencySymbol}
+                  {coin.market_data.current_price[currency]}
+                </StatNumber>
+                <StatHelpText>
+                  <StatArrow
+                    type={
+                      coin.market_data.price_change_percentage_24h > 0
+                        ? "increase"
+                        : "decrease"
+                    }
+                  />
+                  {coin.market_data.price_change_percentage_24h}%
+                </StatHelpText>
+              </Stat>
 
               <Badge
                 fontSize={"2xl"}
-                color={'#5AB9EA'}
-                bgColor={'#25274D'}
+                color={'#130130'}
+                bgColor={"#fff"}
               >{`#${coin.market_cap_rank}`}</Badge>
 
               <CustomBar

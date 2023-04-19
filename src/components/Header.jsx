@@ -1,4 +1,4 @@
-import { Button, useDisclosure, IconButton, Flex } from '@chakra-ui/react';
+import { Button, IconButton, Flex } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { BiMenu } from "react-icons/bi";
@@ -9,40 +9,40 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <Flex bgGradient='linear(to-l, #25274D, #5AB9EA)' shadow={'lg'} p={'4'} justifyContent={'space-between'} px={10}>
+    <Flex bgColor={"#fff"} shadow={'lg'} p={'2'} justifyContent={'space-between'} alignItems={"center"} px={10}>
 
       <Flex
-        fontSize={{ base: "2xl", lg: '4xl' }}
+        fontSize={{ base: "2xl", lg: '2xl' }}
         color={"#25274D"}
       >
         <strong>TokenTradeX</strong>
       </Flex>
 
       <Flex display={{ base: "none", lg: "flex" }}>
-        <Button variant={'unstyled'} fontSize='2xl' color={"#25274D"} mr={3} >
+        <Button variant={'unstyled'} fontSize='xl' color={"#25274D"} mr={3} >
           <Link to="/">Home</Link>
         </Button>
-        <Button variant={'unstyled'} fontSize='2xl' color={"#25274D"} mr={3}>
+        <Button variant={'unstyled'} fontSize='xl' color={"#25274D"} mr={3}>
           <Link to="/exchanges">Exchanges</Link>
         </Button>
-        <Button variant={'unstyled'} fontSize='2xl' color={"#25274D"} >
+        <Button variant={'unstyled'} fontSize='xl' color={"#25274D"} >
           <Link to="/coins">Coins</Link>
         </Button>
       </Flex>
 
       <Flex display={{ base: "none", lg: "flex" }}>
-        <Button variant={'outline'} fontSize='xl' color={"#5AB9EA"} mr={3}
+        <Button size='sm' variant={'solid'} fontSize='sm' color={"#130130"} mr={3}
           css={{
             "&:hover": {
-              color: "#25274D"
+              color: "#221f26",
             },
           }}
         >
           Log In
         </Button>
-        <Button variant={'outline'} fontSize='xl' color={"#5AB9EA"} css={{
+        <Button size='sm' variant={'solid'} fontSize='sm' color={"#130130"} css={{
           "&:hover": {
-            color: "#25274D"
+            color: "#221f26",
           },
         }}>
           Sign Up
@@ -51,7 +51,7 @@ const Header = () => {
 
       <IconButton
         display={{ base: "flex", lg: "none" }}
-        bgColor={"#5AB9EA"}
+        bgColor={"#C1C8E4"}
         variant='outline'
         colorScheme='#25274D'
         aria-label='Call Sage'
@@ -72,7 +72,7 @@ const Header = () => {
           flexDirection={"column"}
           w={"100vw"}
           h={"100vh"}
-          bgColor={"#5AB9EA"}
+          bgColor={"#e5e7eb"}
           zIndex={20}
           pos={"fixed"}
           top={0}
@@ -86,7 +86,7 @@ const Header = () => {
               mt={2}
               mr={2}
               variant='ghost'
-              bgColor={"#5AB9EA"}
+              bgColor={"#C1C8E4"}
               colorScheme='#25274D'
               aria-label='Close Button'
               fontSize={25}

@@ -7,11 +7,11 @@ const CoinCard = ({ id, name, img, symbol, price, currencySymbol = "₹" }) => (
     <VStack
       w={"52"}
       shadow={"lg"}
-      p={"8"}
+      py={'3'}
       bgColor={'#C1C8E4'}
       borderRadius={"lg"}
       transition={"all 0.3s"}
-      m={"4"}
+      m={"3"}
       css={{
         "&:hover": {
           transform: "scale(1.1)",
@@ -20,17 +20,16 @@ const CoinCard = ({ id, name, img, symbol, price, currencySymbol = "₹" }) => (
     >
       <Image
         src={img}
-        w={"10"}
-        h={"10"}
+        w={'6'} h={'6'}
         objectFit={"contain"}
         alt={"Exchange"}
       />
-      <Heading size={"md"} noOfLines={1}>
+      <Heading size={"xs"} noOfLines={1}>
         {symbol}
       </Heading>
 
-      <Text noOfLines={1}>{name}</Text>
-      <Text noOfLines={1}>{price ? `${currencySymbol}${price}` : "NA"}</Text>
+      <Text fontSize={"sm"} noOfLines={1}>{name}</Text>
+      <Text fontSize={"sm"} noOfLines={1}>{price ? `${currencySymbol}${price}` : "NA"}</Text>
     </VStack>
   </Link>
 );

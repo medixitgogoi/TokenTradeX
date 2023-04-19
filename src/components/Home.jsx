@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <Box 
-      bgGradient='linear(to-l, #25274D, #5AB9EA)'
-      // bgColor={"#25274D"}
+      // bgGradient='linear(to-l, #25274D, #5AB9EA)'
+      bgColor={"#e5e7eb"}
       w={"full"} h={"92vh"}>
       <motion.div
         style={{

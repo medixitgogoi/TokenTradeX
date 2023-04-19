@@ -1,4 +1,4 @@
-import { VStack, Heading, Text, Image, Box } from '@chakra-ui/react';
+import { VStack, Heading, Text, Image } from '@chakra-ui/react';
 import React from 'react';
 
 const ExchangeCard = ({ name, img, rank, url }) => {
@@ -7,11 +7,11 @@ const ExchangeCard = ({ name, img, rank, url }) => {
       <a href={url} target={'blank'}>
         <VStack
           w={'52'}
-          shadow={'lg'}
-          p={'8'}
+          shadow={'xl'}
           borderRadius={'lg'}
           transition={'all 0.25s'}
-          m={'4'}
+          py={'5'}
+          m={"3"}
           bgColor={'#C1C8E4'}
           css={{
             '&:hover': {
@@ -19,11 +19,11 @@ const ExchangeCard = ({ name, img, rank, url }) => {
             },
           }}
         >
-          <Image w={'10'} h={'10'} objectFit={'contain'} src={img} alt={name} />
-          <Heading size={'md'} noOfLines={1}>
+          <Image w={'6'} h={'6'} objectFit={'contain'} src={img} alt={name} />
+          <Heading size={'xs'} noOfLines={1}>
             {rank}
           </Heading>
-          <Text noOfLines={1}>{name}</Text>
+          <Text fontSize={"sm"} noOfLines={1}>{name}</Text>
         </VStack>
       </a>
     </>

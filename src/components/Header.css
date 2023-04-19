@@ -18,7 +18,7 @@
   width: 100%;
   height: 100vh;
   flex-direction: column;
-  background: #25274D;
+  background: #25274d;
   z-index: 5;
 }
 
@@ -38,7 +38,7 @@
 .app__navbar-smallscreen_links li {
   margin: 2rem;
   cursor: pointer;
-  color: #5AB9EA;
+  color: #5ab9ea;
   font-size: 2rem;
   text-align: center;
   font-family: var(--font-base);
@@ -49,12 +49,10 @@
 }
 
 @media screen and (max-width: 650px) {
-
-    .app__navbar {
-      padding: 1rem;
-    }
-    .app__navbar-smallscreen {
-        display: flex;
-      }
-
+  .app__navbar {
+    padding: 1rem;
   }
+  .app__navbar-smallscreen {
+    display: flex;
+  }
+}

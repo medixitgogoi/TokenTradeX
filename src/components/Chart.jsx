@@ -45,10 +45,11 @@ const Chart = ({ arr = [], currency, days }) => {
 
   return (
     <Line
+      data={data}
       options={{
         responsive: true,
+        maintainAspectRatio: true,
       }}
-      data={data}
     />
   );
 };

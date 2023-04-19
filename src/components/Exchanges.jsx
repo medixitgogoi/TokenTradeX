@@ -22,7 +22,7 @@ const Exchanges = () => {
   useEffect(() => {
     const fetchExchanges = async () => {
       try {
-        const { data } = await axios.get(`${server}/exchanges?per_page=98`);
+        const { data } = await axios.get(`${server}/exchanges?per_page=96`);
         setExchanges(data);
         setLoading(false);
       } catch (error) {
@@ -34,14 +34,14 @@ const Exchanges = () => {
   }, []);
 
   if (error) return <ErrorComponent message={'Error While Fetching Data'} />;
-// bgColor={"#25274D"}
+  // bgColor={"#25274D"}
   return (
-    <Container maxW={'container.xxl'} bgGradient='linear(to-l, #25274D, #5AB9EA)'>
+    <Container maxW={'container.xxl'} bgColor={"#e5e7eb"}>
       {loading ? (
         <Loader />
       ) : (
         <>
-          <HStack wrap={'wrap'}  borderRadius={'lg'} justifyContent={"space-evenly"} py={10}>
+          <HStack wrap={'wrap'} spacing='0.1rem' borderRadius={'md'} justifyContent={"space-evenly"} py={5} px={10}>
             {exchanges.map(i => (
               <ExchangeCard
                 key={i.id}
@@ -53,13 +53,20 @@ const Exchanges = () => {
             ))}
           </HStack>
 
-          <HStack w={'full'} overflowX={'auto'} p={'8'}>
+          <HStack w={'full'} overflowX={'auto'} py={'8'} px={'6'}>
             {btns.map((item, index) => (
               <Button
                 key={index}
-                color={'#5AB9EA'}
-                bgColor={'#25274D'}
+                size={'xs'}
+                color={'#130130'}
+                bgColor={"#fff"}
                 onClick={() => changePage(index + 1)}
+                css={{
+                  "&:hover": {
+                    cursor: "pointer",
+                    border: "2px solid #fff"
+                  },
+                }}
               >
                 {index + 1}
               </Button>
