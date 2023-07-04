@@ -113,23 +113,6 @@ const CoinDetails = () => {
               <Chart arr={chartArray} currency={currencySymbol} days={days} />
             </Flex>
 
-            {/* <Box flex justifyContent={"center"} bgColor={"black"}> */}
-            <HStack p="4" overflowX={"auto"} flex justifyContent={"center"}>
-              {btns.map((i) => (
-                <Button
-                  disabled={days === i}
-                  size={"xs"}
-                  padding={2}
-                  color={'#130130'}
-                  bgColor={"#fff"}
-                  cursor= {"pointer"}
-                >
-                  {i}
-                </Button>
-              ))}
-            </HStack>
-            {/* </Box> */}
-
             <RadioGroup value={currency} onChange={setCurrency} p={"8"}>
               <HStack spacing={"4"} flex justifyContent={"center"}>
                 <Radio size={"sm"} value={'inr'} borderColor={"#130130"}><Text color={'#25274D'}>INR</Text></Radio>

@@ -30,25 +30,6 @@ const Header = () => {
         </Button>
       </Flex>
 
-      <Flex display={{ base: "none", lg: "flex" }}>
-        <Button size='sm' variant={'solid'} fontSize='sm' color={"#130130"} mr={3}
-          css={{
-            "&:hover": {
-              color: "#221f26",
-            },
-          }}
-        >
-          Log In
-        </Button>
-        <Button size='sm' variant={'solid'} fontSize='sm' color={"#130130"} css={{
-          "&:hover": {
-            color: "#221f26",
-          },
-        }}>
-          Sign Up
-        </Button>
-      </Flex>
-
       <IconButton
         display={{ base: "flex", lg: "none" }}
         bgColor={"#C1C8E4"}
